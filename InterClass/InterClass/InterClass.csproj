@@ -122,7 +122,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AgendaController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\ConsultaController.cs" />
+    <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrcamentoController.cs" />
+    <Compile Include="Controllers\PacoteController.cs" />
+    <Compile Include="Controllers\PagamentoController.cs" />
+    <Compile Include="Controllers\PlanoController.cs" />
+    <Compile Include="Controllers\SeguroController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -134,18 +143,18 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="img\bg-masthead.jpg" />
-    <Content Include="img\portfolio\fullsize\1.jpg" />
-    <Content Include="img\portfolio\fullsize\2.jpg" />
-    <Content Include="img\portfolio\fullsize\3.jpg" />
-    <Content Include="img\portfolio\fullsize\4.jpg" />
-    <Content Include="img\portfolio\fullsize\5.jpg" />
-    <Content Include="img\portfolio\fullsize\6.jpg" />
-    <Content Include="img\portfolio\thumbnails\1.jpg" />
-    <Content Include="img\portfolio\thumbnails\2.jpg" />
-    <Content Include="img\portfolio\thumbnails\3.jpg" />
-    <Content Include="img\portfolio\thumbnails\4.jpg" />
-    <Content Include="img\portfolio\thumbnails\5.jpg" />
-    <Content Include="img\portfolio\thumbnails\6.jpg" />
+    <Content Include="img\pacote\fullsize\1.jpg" />
+    <Content Include="img\pacote\fullsize\2.jpg" />
+    <Content Include="img\pacote\fullsize\3.jpg" />
+    <Content Include="img\pacote\fullsize\4.jpg" />
+    <Content Include="img\pacote\fullsize\5.jpg" />
+    <Content Include="img\pacote\fullsize\6.jpg" />
+    <Content Include="img\pacote\thumbnails\1.jpg" />
+    <Content Include="img\pacote\thumbnails\2.jpg" />
+    <Content Include="img\pacote\thumbnails\3.jpg" />
+    <Content Include="img\pacote\thumbnails\4.jpg" />
+    <Content Include="img\pacote\thumbnails\5.jpg" />
+    <Content Include="img\pacote\thumbnails\6.jpg" />
     <Content Include="js\creative.js" />
     <Content Include="js\creative.min.js" />
     <Content Include="vendor\bootstrap\js\bootstrap.bundle.js" />
@@ -190,8 +199,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -224,6 +231,31 @@
     <Content Include="vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="vendor\jquery\jquery.min.map" />
     <Content Include="vendor\jquery\jquery.slim.min.map" />
+    <Content Include="Views\Agenda\Index.cshtml" />
+    <Content Include="Views\Agenda\Selecionar.cshtml" />
+    <Content Include="Views\Agenda\Realizado.cshtml" />
+    <Content Include="Views\Agenda\Agendamentos.cshtml" />
+    <Content Include="Views\Agenda\Confirmar.cshtml" />
+    <Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\Cliente\Cadastro.cshtml" />
+    <Content Include="Views\Consulta\Index.cshtml" />
+    <Content Include="Views\Consulta\Fechamento.cshtml" />
+    <Content Include="Views\Funcionario\Index.cshtml" />
+    <Content Include="Views\Funcionario\Cadastro.cshtml" />
+    <Content Include="Views\Orcamento\Index.cshtml" />
+    <Content Include="Views\Orcamento\Gerar.cshtml" />
+    <Content Include="Views\Orcamento\Valor.cshtml" />
+    <Content Include="Views\Pacote\Index.cshtml" />
+    <Content Include="Views\Pacote\Cadastro.cshtml" />
+    <Content Include="Views\Pacote\Opcoes.cshtml" />
+    <Content Include="Views\Pagamento\Index.cshtml" />
+    <Content Include="Views\Pagamento\Debito.cshtml" />
+    <Content Include="Views\Pagamento\Credito.cshtml" />
+    <Content Include="Views\Plano\Index.cshtml" />
+    <Content Include="Views\Plano\Cadastro.cshtml" />
+    <Content Include="Views\Plano\Opcoes.cshtml" />
+    <Content Include="Views\Seguro\Index.cshtml" />
+    <Content Include="Views\Seguro\Cadastro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

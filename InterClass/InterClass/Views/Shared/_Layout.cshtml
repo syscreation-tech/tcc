@@ -1,43 +1,262 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>@ViewBag.Title - InterClass</title>
+    <!-- Font Awesome Icons -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Theme CSS - Includes Bootstrap -->
+    <link href="css/creative.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+<body id="page-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Nome do aplicativo", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Início", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Sobre", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">InterClass</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#about">Sobre nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#plano">Planos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#pacote">Pacotes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#seguro">Seguros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#">Orçamento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#">Agenda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#">Cadastre-se</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#">Login</a>
+                    </li>
                 </ul>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Meu Aplicativo ASP.NET</p>
-        </footer>
-    </div>
+    </nav>
+    @*    <div class="container-fluid body-content">*@
+    @RenderBody()
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    <!-- About Section -->
+    <section class="page-section bg-primary" id="about">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="text-white mt-0">Nós temos o que você precisa!</h2>
+                    <hr class="divider light my-4">
+                    <p class="text-white-50 mb-4">InterClass tem tudo o que você precisa para fazer a viagem de intercambio dos seus sonhos! Monte sua viagem de intercâmbio com nossos planos e pacotes. Estamos esperando!</p>
+                    <a class="btn btn-light btn-xl js-scroll-trigger" href="#">Planos!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="page-section" id="plano">
+        <div class="container">
+            <h2 class="text-center mt-0">Planos</h2>
+            <hr class="divider my-4">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="mt-5">
+                        <i class="fas fa-4x fa-gem text-primary mb-4"></i>
+                        <h3 class="h4 mb-2">Plano 1</h3>
+                        <p class="text-muted mb-0">Esse é o plano 1!</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="mt-5">
+                        <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
+                        <h3 class="h4 mb-2">Plano 2</h3>
+                        <p class="text-muted mb-0">Esse é o plano 2.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="mt-5">
+                        <i class="fas fa-4x fa-globe text-primary mb-4"></i>
+                        <h3 class="h4 mb-2">Plano 3</h3>
+                        <p class="text-muted mb-0">Esse é o plano 3!</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="mt-5">
+                        <i class="fas fa-4x fa-heart text-primary mb-4"></i>
+                        <h3 class="h4 mb-2">Plano 4</h3>
+                        <p class="text-muted mb-0">Esse é o plano 4</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- pacote Section -->
+    <section id="pacote">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col-lg-4 col-sm-6">
+                    <a class="pacote-box" href="img/pacote/fullsize/1.jpg">
+                        <img class="img-fluid" src="img/pacote/thumbnails/1.jpg" alt="">
+                        <div class="pacote-box-caption">
+                            <div class="project-category text-white-50">
+                                Australia
+                            </div>
+                            <div class="project-name">
+                                Sidney
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="pacote-box" href="img/pacote/fullsize/2.jpg">
+                        <img class="img-fluid" src="img/pacote/thumbnails/2.jpg" alt="">
+                        <div class="pacote-box-caption">
+                            <div class="project-category text-white-50">
+                                Estados Unidos
+                            </div>
+                            <div class="project-name">
+                                Miami
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="pacote-box" href="img/pacote/fullsize/3.jpg">
+                        <img class="img-fluid" src="img/pacote/thumbnails/3.jpg" alt="">
+                        <div class="pacote-box-caption">
+                            <div class="project-category text-white-50">
+                                Inglaterra
+                            </div>
+                            <div class="project-name">
+                                Londres
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="pacote-box" href="img/pacote/fullsize/4.jpg">
+                        <img class="img-fluid" src="img/pacote/thumbnails/4.jpg" alt="">
+                        <div class="pacote-box-caption">
+                            <div class="project-category text-white-50">
+                                Irlanda
+                            </div>
+                            <div class="project-name">
+                                Dublin
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="pacote-box" href="img/pacote/fullsize/5.jpg">
+                        <img class="img-fluid" src="img/pacote/thumbnails/5.jpg" alt="">
+                        <div class="pacote-box-caption">
+                            <div class="project-category text-white-50">
+                                Escocia
+                            </div>
+                            <div class="project-name">
+                                Glasgow
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="pacote-box" href="img/pacote/fullsize/6.jpg">
+                        <img class="img-fluid" src="img/pacote/thumbnails/6.jpg" alt="">
+                        <div class="pacote-box-caption p-3">
+                            <div class="project-category text-white-50">
+                                Canadá
+                            </div>
+                            <div class="project-name">
+                                Montreal
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="page-section" id="seguro">
+        <div class="container">
+            <h2 class="text-center mt-0">Seguros</h2>
+            <hr class="divider my-4">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="mt-5">
+                        <i class="fas fa-4x fa-gem text-primary mb-4"></i>
+                        <h3 class="h4 mb-2">Seguro 1</h3>
+                        <p class="text-muted mb-0">Esse é o seguro 1!</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="mt-5">
+                        <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
+                        <h3 class="h4 mb-2">Seguro 2</h3>
+                        <p class="text-muted mb-0">Esse é o seguro 2.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="mt-5">
+                        <i class="fas fa-4x fa-globe text-primary mb-4"></i>
+                        <h3 class="h4 mb-2">Seguro 3</h3>
+                        <p class="text-muted mb-0">Esse é o seguro 3!</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="mt-5">
+                        <i class="fas fa-4x fa-heart text-primary mb-4"></i>
+                        <h3 class="h4 mb-2">Seguro 4</h3>
+                        <p class="text-muted mb-0">Esse é o seguro 4</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="bg-light py-5">
+        <div class="container">
+            <div class="small text-center text-muted">InterClass</div>
+        </div>
+    </footer>
+    @*    </div>*@
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
