@@ -141,6 +141,7 @@
   <ItemGroup>
     <Content Include="css\creative.css" />
     <Content Include="css\creative.min.css" />
+    <Content Include="css\interclass.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="img\bg-masthead.jpg" />

@@ -18,5 +18,11 @@ namespace InterClass.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Cadastro(string name)
+        {
+            return View();
+        }
     }
 }
