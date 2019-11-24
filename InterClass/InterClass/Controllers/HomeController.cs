@@ -15,26 +15,6 @@ namespace InterClass.Controllers
             return View(p);
         }
 
-        public ActionResult Ferias()
-        {
-            return View();
-        }
-
-        public ActionResult Canada()
-        {
-            return View();
-        }
-
-        public ActionResult EUA()
-        {
-            return View();
-        }
-
-        public ActionResult Irlanda()
-        {
-            return View();
-        }
-
         public ActionResult Login(Login verLogin)
         {
 
