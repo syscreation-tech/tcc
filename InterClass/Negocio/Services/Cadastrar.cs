@@ -1,25 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Web;
-using MySql.Data.MySqlClient;
-using Regra_de_Negocios;
-using Regra_de_Negocios.Entity;
+﻿using MySql.Data.MySqlClient;
+using Negocio.DBSessao;
+using Negocio.Entity;
 
-namespace Gabriel_TCM
+namespace Negocio.Services
 {
     public class Cadastrar
     {
         conexao con = new conexao();
-        public void Insert(USUARIO usuario)
+        public void Insert(Usuario usuario)
         {
             MySqlCommand cmd = new MySqlCommand("insert into USUARIO(NOME_USUARIO,LOGIN,SENHA,EMAIL values ('@Nome', '@Login', '@Senha', '@Email');",con.MyConectarBD());
-            cmd.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = usuario.NOME_USUARIO;
-            cmd.Parameters.Add("@Login", MySqlDbType.VarChar).Value = usuario.LOGIN;
-            cmd.Parameters.Add("@Senha", MySqlDbType.VarChar).Value = usuario.SENHA;
-            cmd.Parameters.Add("@Email", MySqlDbType.VarChar).Value = usuario.EMAIL;
+            cmd.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = usuario.Nome_Usuario;
+            cmd.Parameters.Add("@Login", MySqlDbType.VarChar).Value = usuario.Login;
+            cmd.Parameters.Add("@Senha", MySqlDbType.VarChar).Value = usuario.Senha;
+            cmd.Parameters.Add("@Email", MySqlDbType.VarChar).Value = usuario.Email;
 
             cmd.ExecuteNonQuery();
             con.MyDesconectarBD();
@@ -34,15 +28,7 @@ namespace Gabriel_TCM
             cmd.Parameters.Add("@DataValid",MySqlDbType.VarChar).Value = produto.DataValid;
 
         }
-        //public void InsereDadosParaAgendamento(Agendamento agendamento)
-        //{
-        //    MySqlCommand cmd = new MySqlCommand("insert into Agendamento(Nome_usuario,EMAIL) values ('@Nome_usuario', '{1}');");
-
-        //    using (db = new DBSessao())
-        //    {
-        //        db.ExecutaComando(query);
-        //    }
-        //}
+     
 
     }
 }

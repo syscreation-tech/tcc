@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Regra_de_Negocios.Entity
+﻿namespace Negocio.Entity
 {
-    public class USUARIO
+    public class Usuario
     {
-        public int USUARIO_ID { get; set; }
-        public string NOME_USUARIO { get; set; }
-        public string LOGIN { get; set; }
-        public string SENHA { get; set; }
-        public string EMAIL { get; set; }
+        public int Usuario_Id { get; set; }
+        public string Nome_Usuario { get; set; }
+        public string Login { get; set; }
+        public string Senha { get; set; }
+        public string Email { get; set; }
 
     }
 }

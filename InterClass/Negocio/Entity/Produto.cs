@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Regra_de_Negocios.Entity
+namespace Negocio.Entity
 {
     public class Produto
     {

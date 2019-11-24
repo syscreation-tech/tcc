@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Regra_de_Negocios.Entity
+namespace Negocio.Entity
 {
     public class Seguros
     {
-        public int idseg { get; set; }
-        public string tiposeg { get; set; }
-        public decimal valorseg { get; set; }
+        public int Idseg { get; set; }
+        public string Tiposeg { get; set; }
+        public decimal Valorseg { get; set; }
 
     }
 }

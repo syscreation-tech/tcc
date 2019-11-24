@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Regra_de_Negocios.Entity;
 using MySql.Data.MySqlClient;
-namespace Regra_de_Negocios.Services
+using Negocio.DBSessao;
+using Negocio.Entity;
+
+namespace Negocio.Services
 {
     public class LoginService
     {
@@ -18,9 +15,9 @@ namespace Regra_de_Negocios.Services
         {
             MySqlCommand cmd = new MySqlCommand("select * from tb_login where usuario = @usuario and senha = @Senha ", con.MyConectarBD());
 
-            cmd.Parameters.Add("@usuario", MySqlDbType.VarChar).Value = user.usuario;
+            cmd.Parameters.Add("@usuario", MySqlDbType.VarChar).Value = user.Usuario;
             cmd.Parameters.Add("@Senha", MySqlDbType.VarChar).Value = user.Senha;
-            cmd.Parameters.Add("@tipo", MySqlDbType.VarChar).Value = user.tipo;
+            cmd.Parameters.Add("@tipo", MySqlDbType.VarChar).Value = user.Tipo;
             MySqlDataReader leitor;
 
             leitor = cmd.ExecuteReader();
@@ -31,9 +28,9 @@ namespace Regra_de_Negocios.Services
                 {
 
                     {
-                        user.usuario = Convert.ToString(leitor["usuario"]);
+                        user.Usuario = Convert.ToString(leitor["usuario"]);
                         user.Senha = Convert.ToString(leitor["Senha"]);
-                        user.tipo = Convert.ToString(leitor["tipousuario"]);
+                        user.Tipo = Convert.ToString(leitor["tipousuario"]);
                     }
                 }
 
@@ -41,27 +38,14 @@ namespace Regra_de_Negocios.Services
 
             else
             {
-                user.usuario = null;
+                user.Usuario = null;
                 user.Senha = null;
-                user.tipo = null;
+                user.Tipo = null;
             }
 
             con.MyDesconectarBD();
         }
-        //public void testaSession()
-        //{
-        //    if ((Session["usuarioLogado"] == null) || (Session["senhaLogado"] == null))
-
-        //    {
-        //        return RedirectToAction("semAcesso", "Home");
-        //    }
-        //    else
-        //    {
-        //        ViewBag.teste = Session["tipoLogado"];
-
-        //        return View();
-        //    }
-        //}
+     
 
     }
 }
