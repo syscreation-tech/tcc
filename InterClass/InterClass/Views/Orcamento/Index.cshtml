@@ -1,7 +1,28 @@
-﻿
+﻿@model List<Negocio.Entity.Pacotes>
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h4>c</h4>
+@foreach(var vlrs in Model)
+{
+    <p id="@vlrs.Idpac" class='caught' hidden></p>
+    <p>@vlrs.Destino</p>
+    <p>@vlrs.Tipopac</p>
+    <p>@vlrs.Valor</p>
+}
 
+<button id="cont1">Continuar!</button>
+
+
+<script>
+    $(function () {
+        $("#cont1").on("click", function () {
+            var idpac = $(".caught").attr("id");
+            $.post("Orcamento/index2", { ping: 1 }, function (data) {
+                $("body").html(data);
+            });
+            $.post("Orcamento/Gerar", {id : idpac}, function () {});
+        });
+    });
+</script>

@@ -40,12 +40,20 @@
     <div class="container">
         <h2 class="text-center mt-0">Planos</h2>
         <hr class="divider my-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <p class="text-black-50 mb-4">
+                    Trabalhamos com duas opções de plano, sendo eles Standard que conta com acomodação em residencia familiar e o Master onde o intercambista poderá se hospedar em uma residência particular..
+                </p>
+            </div>
+        </div>
+        <hr class="divider my-4">
         <div class="row">
             <div class="col-lg-3 col-md-6 text-center">
                 <div class="mt-3">
                     <a class="plano-box" href="~/img/Plano/bandeira-dos-estados-unidos-da-america_1401-253.jpg" />
                     <img class="img-fluid" src="~/img/Plano/bandeira-dos-estados-unidos-da-america_1401-253.jpg" alt="">
-                    <h5 class="h5 mb-2">Estados Unidos</h5>
+                    <h5 class="h5 mb-2">@Html.ActionLink("Estados Unidos ", "Opcoes", "Pacote", new { ident = 1 })</h5>
                     <p class="text-muted mb-0">New York</p>
                 </div>
             </div>
@@ -82,61 +90,73 @@
     <div class="container-fluid p-0">
         <h2 class="text-center mt-0">Pacotes</h2>
         <hr class="divider my-4">
-        <div class="row no-gutters">
-            <div class="col-lg-3 col-sm-4">
-                <a class="pacote-box" href="~/img/euaw.jpg" />
-                <img class="img-fluid" src="~/img/euaw.jpg" alt="">
-                <div class="pacote-box-caption">
-                    <div class="project-category text-white-50">
-                        New York
-                    </div>
-                    <div class="project-name">
-                        Estados Unidos
-                    </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <p class="text-black-50 mb-4">
+                        Atualmente a Interclass oferece aos nossos clientes 2 tipos de pacotes sendo eles High School voltado para adolescentes
+                        entre 14 e 18 anos que desejam cursar o Ensino Médio no exterior e Estudar e Trabalhar indicado para pessoas que têm
+                        interesse em aperfeiçoar o idioma, adquirir vocabulário e experiência profissional no exterior e até mesmo suavizar as
+                        despesas do intercâmbio, conciliando estudo com a possibilidade de trabalhar, e você poderá optar por 4 países para viver
+                        essa experiência maravilhosa.
+                    </p>
                 </div>
-                </a>
             </div>
-            <div class="col-lg-3 col-sm-4">
-                <a class="pacote-box" href="~/img/canadaw.jpg" />
-                <img class="img-fluid" src="~/img/canadaw.jpg" alt="">
-                <div class="pacote-box-caption">
-                    <div class="project-category text-white-50">
-                        Toronto
+            <hr class="divider my-4">
+            <div class="row no-gutters">
+                <div class="col-lg-3 col-sm-4">
+                    <a class="pacote-box" href="Pacote/Opcoes?id=1" />
+                    <img class="img-fluid" src="~/img/euaw.jpg" alt="">
+                    <div class="pacote-box-caption">
+                        <div class="project-category text-white-50">
+                            New York
+                        </div>
+                        <div class="project-name">
+                            Estados Unidos
+                        </div>
                     </div>
-                    <div class="project-name">
-                        Canadá
-                    </div>
+                    </a>
                 </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-sm-4">
-                <a class="pacote-box" href="~/img/australiaw.jpg" />
-                <img class="img-fluid" src="~/img/australiaw.jpg" alt="">
-                <div class="pacote-box-caption">
-                    <div class="project-category text-white-50">
-                        Sidney
+                <div class="col-lg-3 col-sm-4">
+                    <a class="pacote-box" href="Pacote/Opcoes?id=2" />
+                    <img class="img-fluid" src="~/img/canadaw.jpg" alt="">
+                    <div class="pacote-box-caption">
+                        <div class="project-category text-white-50">
+                            Toronto
+                        </div>
+                        <div class="project-name">
+                            Canadá
+                        </div>
                     </div>
-                    <div class="project-name">
-                        Austrália
-                    </div>
+                    </a>
                 </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-sm-4">
-                <a class="pacote-box" href="~/img/dublinw.jpg" />
-                <img class="img-fluid" src="~/img/dublinw.jpg" alt="">
-                <div class="pacote-box-caption">
-                    <div class="project-category text-white-50">
-                        Dublin
+                <div class="col-lg-3 col-sm-4">
+                    <a class="pacote-box" href="Pacote/Opcoes?id=3" />
+                    <img class="img-fluid" src="~/img/australiaw.jpg" alt="">
+                    <div class="pacote-box-caption">
+                        <div class="project-category text-white-50">
+                            Sidney
+                        </div>
+                        <div class="project-name">
+                            Austrália
+                        </div>
                     </div>
-                    <div class="project-name">
-                        Irlanda
-                    </div>
+                    </a>
                 </div>
-                </a>
+                <div class="col-lg-3 col-sm-4">
+                    <a class="pacote-box" href="Pacote/Opcoes?id=4" />
+                    <img class="img-fluid" src="~/img/dublinw.jpg" alt="">
+                    <div class="pacote-box-caption">
+                        <div class="project-category text-white-50">
+                            Dublin
+                        </div>
+                        <div class="project-name">
+                            Saiba Mais...
+                        </div>
+                    </div>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
 </section>
 
 <!-- Services Section -->
@@ -144,36 +164,42 @@
     <div class="container">
         <h2 class="text-center mt-0">Seguros</h2>
         <hr class="divider my-4">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 text-center">
-                <div class="mt-5">
-                    <i class="fas fa-4x fa-gem text-primary mb-4"></i>
-                    <h3 class="h4 mb-2">Seguro 1</h3>
-                    <p class="text-muted mb-0">Esse é o seguro 1!</p>
-                </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <p class="text-black-50 mb-4">
+                    Contamos com 4 tipos de seguros, para tornar seu período de intercâmbio mais tranquilo e seguro.
+                </p>
             </div>
-            <div class="col-lg-3 col-md-6 text-center">
-                <div class="mt-5">
-                    <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
-                    <h3 class="h4 mb-2">Seguro 2</h3>
-                    <p class="text-muted mb-0">Esse é o seguro 2.</p>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="mt-5">
+                        <i class="fas fa-4x fa-gem text-primary mb-4"></i>
+                        <h3 class="h4 mb-2">Seguro 1</h3>
+                        <p class="text-muted mb-0">Esse é o seguro 1!</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6 text-center">
-                <div class="mt-5">
-                    <i class="fas fa-4x fa-globe text-primary mb-4"></i>
-                    <h3 class="h4 mb-2">Seguro 3</h3>
-                    <p class="text-muted mb-0">Esse é o seguro 3!</p>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="mt-5">
+                        <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
+                        <h3 class="h4 mb-2">Seguro 2</h3>
+                        <p class="text-muted mb-0">Esse é o seguro 2.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6 text-center">
-                <div class="mt-5">
-                    <i class="fas fa-4x fa-heart text-primary mb-4"></i>
-                    <h3 class="h4 mb-2">Seguro 4</h3>
-                    <p class="text-muted mb-0">Esse é o seguro 4</p>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="mt-5">
+                        <i class="fas fa-4x fa-globe text-primary mb-4"></i>
+                        <h3 class="h4 mb-2">Seguro 3</h3>
+                        <p class="text-muted mb-0">Esse é o seguro 3!</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="mt-5">
+                        <i class="fas fa-4x fa-heart text-primary mb-4"></i>
+                        <h3 class="h4 mb-2">Seguro 4</h3>
+                        <p class="text-muted mb-0">Esse é o seguro 4</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </section>
 

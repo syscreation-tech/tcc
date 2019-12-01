@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Index3";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Agende aqui o dia e horário que voce deseja vir fazer a entrevista e finalizar a compra do seu intercâmbio:</h4>
+<input type="date" name="agenda" id="dtagenda" />
+
+<button id="end">Concluir</button>
+
+<script>
+    $(function () {
+        $("#end").on("click", function () {
+            var valordt = $("#dtagenda").val();
+            $.post("Orcamento/gerar", {dt : valordt}, function (pong) {
+                $("body").html(pong);
+            });
+        });
+    });
+</script>
+

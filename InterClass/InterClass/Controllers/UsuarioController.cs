@@ -16,22 +16,22 @@ namespace InterClass.Controllers
             return View();
         }
 
-        public ActionResult Cadastrar()
-        {
-            return View();
-        }
+        //public ActionResult Cadastrar()
+        //{
+        //    return View();
+        //}
 
-        [HttpPost]
-        public ActionResult Cadastrar(Usuario usuario)
-        {
-            if (ModelState.IsValid)
-            {
-                var metodosUsuario = new Cadastrar();
-                metodosUsuario.Insert(usuario);
-                return RedirectToAction("Index", "Home");
-            }
-            return View(usuario);
-        }
+        //[HttpPost]
+        //public ActionResult Cadastrar(Usuario usuario)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        var metodosUsuario = new Cadastrar();
+        //        metodosUsuario.Insert(usuario);
+        //        return RedirectToAction("Index", "Home");
+        //    }
+        //    return View(usuario);
+        //}
 
         public ActionResult Produtos()
         {

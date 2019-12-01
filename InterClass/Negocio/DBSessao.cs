@@ -1,11 +1,12 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Configuration;
 
 namespace Negocio.DBSessao
 {
     public class conexao
     {
-        MySqlConnection cn = new MySqlConnection("Server=db4free.net;DataBase=syscreationdb;User=syscreationuser;pwd=syscreationpwd");
+        MySqlConnection cn = new MySqlConnection(ConfigurationManager.AppSettings["ConexaoDB"].ToString());
         public static string msg;
 
         public MySqlConnection MyConectarBD()

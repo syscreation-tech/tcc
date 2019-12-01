@@ -8,13 +8,6 @@ namespace InterClass.Controllers
     public class HomeController : Controller
     {
         LoginService ac = new LoginService();
-
-        public ActionResult Index()
-        {
-            Usuario p = new Usuario();
-            return View(p);
-        }
-
         public ActionResult Login(Login verLogin)
         {
 
@@ -29,11 +22,11 @@ namespace InterClass.Controllers
                 Session["tipoLogado"] = verLogin.Tipo;
 
                 LoginService.mail = Session["usuarioLogado"].ToString();
-                if (verLogin.Tipo == "1")
+                if (verLogin.Tipo == "g")
                 {
                     return RedirectToAction("Area51", "Home");
                 }
-                else if (verLogin.Tipo == "2")
+                else if (verLogin.Tipo == "s")
                 {
                     return RedirectToAction("Gerente", "Home");
                 }
@@ -42,16 +35,19 @@ namespace InterClass.Controllers
                     return RedirectToAction("Index", "Usuario");
                 }
             }
-
-            else
-            {
-                return View();
-
-            }
+            return View();
 
         }
         Login log = new Login();
 
+
+        public ActionResult Index()
+        {
+            ViewBag.PageMain = 1;
+
+            Usuario p = new Usuario();
+            return View(p);
+        }
 
     }
 }

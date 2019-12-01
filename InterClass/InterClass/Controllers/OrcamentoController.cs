@@ -3,20 +3,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Negocio.Services;
+using Negocio.Entity;
 
 namespace InterClass.Controllers
 {
     public class OrcamentoController : Controller
     {
         // GET: Orcamento
-        public ActionResult Index()
+        public ActionResult Index(Pacotes pacote)
+        {
+            string identlocal = Request.QueryString["idpasspar"];
+            var metodosusuario = new List();
+            var todospacotes = metodosusuario.ListarPacotesById(identlocal);
+
+            return View(todospacotes);
+        }
+        [HttpPost]
+        public ActionResult Index2(string teste, Seguros seguros)
+        {
+            var metodousuario = new List();
+            var todosseguros = metodousuario.ListarSeguros(seguros);
+
+            return View(teste, todosseguros);
+        }
+
+        public ActionResult Index3()
         {
             return View();
         }
-
-        public ActionResult Gerar()
+        [HttpPost]
+        public ActionResult Gerar(int id,int idseg,string dt)
         {
-            return View();
+            var metodosusuario = new Cadastrar();
+             return View();
         }
 
         public ActionResult Valor()

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using Negocio.Entity;
+using Negocio.Services;
 namespace InterClass.Controllers
 {
     public class ClienteController : Controller
@@ -13,16 +14,22 @@ namespace InterClass.Controllers
         {
             return View();
         }
-
+    
         public ActionResult Cadastro()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult Cadastro(string name)
+        public ActionResult Cadastro(UsuarioCad usuariocad)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                var metodosUsuario = new Cadastrar();
+                metodosUsuario.Insert(usuariocad);
+                return RedirectToAction("Index", "Home");
+            }
+            return View(usuariocad);
         }
     }
 }

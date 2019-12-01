@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBSessao.cs" />
+    <Compile Include="Entity\Agenda.cs" />
     <Compile Include="Entity\Agendamento.cs" />
     <Compile Include="Entity\Login.cs" />
     <Compile Include="Entity\Pacotes.cs" />

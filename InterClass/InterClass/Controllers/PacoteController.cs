@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Negocio.Services;
+using Negocio.Entity;
 
 namespace InterClass.Controllers
 {
@@ -19,8 +21,18 @@ namespace InterClass.Controllers
             return View();
         }
 
-        public ActionResult Opcoes()
+        public ActionResult Opcoes(Pacotes pac)
         {
+            string id = Request.QueryString["id"];
+            ViewBag.valor = id;
+            if(id == "4")
+            {
+                var metodosusuario = new List();
+                var todospacotes = metodosusuario.ListarPacotes(pac);
+                var testeee = todospacotes[0].Idpac;
+                ViewBag.dublin = testeee;
+                return View();
+            }
             return View();
         }
     }

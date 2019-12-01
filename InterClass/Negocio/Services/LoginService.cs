@@ -13,11 +13,10 @@ namespace Negocio.Services
 
         public void TestarUsuario(Login user)
         {
-            MySqlCommand cmd = new MySqlCommand("select * from tb_login where usuario = @usuario and senha = @Senha ", con.MyConectarBD());
+            MySqlCommand cmd = new MySqlCommand("select loginclie,senhaclie,tipousuario from tb_cliente where loginclie = @usuario and senhaclie = @Senha ", con.MyConectarBD());
 
             cmd.Parameters.Add("@usuario", MySqlDbType.VarChar).Value = user.Usuario;
             cmd.Parameters.Add("@Senha", MySqlDbType.VarChar).Value = user.Senha;
-            cmd.Parameters.Add("@tipo", MySqlDbType.VarChar).Value = user.Tipo;
             MySqlDataReader leitor;
 
             leitor = cmd.ExecuteReader();
@@ -28,8 +27,8 @@ namespace Negocio.Services
                 {
 
                     {
-                        user.Usuario = Convert.ToString(leitor["usuario"]);
-                        user.Senha = Convert.ToString(leitor["Senha"]);
+                        user.Usuario = Convert.ToString(leitor["loginclie"]);
+                        user.Senha = Convert.ToString(leitor["senhaclie"]);
                         user.Tipo = Convert.ToString(leitor["tipousuario"]);
                     }
                 }
