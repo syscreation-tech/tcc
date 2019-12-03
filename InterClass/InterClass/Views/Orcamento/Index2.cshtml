@@ -25,14 +25,14 @@
 
 @foreach (var item in Model) {
 <tr id="row">
-    <td hidden>
+    <td class='passidpac' id="@ViewBag.idpacote"hidden>
         @Html.DisplayFor(modelItem => item.Idseg)
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.Tiposeg)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Valorseg)
+        R$ @Html.DisplayFor(modelItem => item.Valorseg)
     </td>
     <th>
         <input type="checkbox" class="ckativo" id="@(item.Idseg)"name="ckativo" value="1" />
@@ -41,17 +41,19 @@
     
 }
 </table>
+<i id="testa" hidden>@ViewBag.vlrtrab</i>
 <button id="btnIndex3">Proximo!</button>
 <script>
     $(function () {
         $(".ckativo").click(function () { 
             var checkbox = $(this).prop("checked");
             var ident = $(this).attr("id");
+            var idpacote = $(".passidpac").attr("id");
+            var vlrtrab = $("#testa").text();
             if (checkbox) {
                 console.log("Sim");
                 $("#btnIndex3").on("click", function () {
-                    $.post("Orcamento/index3", { ping: 1 }, function (pong) { $("body").html(pong) });
-                    $.post("Orcamento/Gerar", {idseg : ident}, function () {});
+                    $.post("Orcamento/index3", {id : idpacote, idseg : ident, vlr : vlrtrab }, function (pong) { $("body").html(pong) });
                 });
             } else if (!checkbox) {
                 console.log("Nao");

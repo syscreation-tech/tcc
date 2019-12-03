@@ -13,32 +13,95 @@ namespace InterClass.Controllers
         // GET: Orcamento
         public ActionResult Index(Pacotes pacote)
         {
-            string identlocal = Request.QueryString["idpasspar"];
-            var metodosusuario = new List();
-            var todospacotes = metodosusuario.ListarPacotesById(identlocal);
+            if ((Session["usuarioLogado"] == null) || (Session["senhaLogado"] == null))
 
-            return View(todospacotes);
+            {
+
+                return RedirectToAction("semacesso", "Home");
+
+            }
+            else
+            {
+                ViewBag.teste = Session["tipoLogado"];
+
+
+                string identlocal = Request.QueryString["idpasspar"];
+                string valorlocal = Request.QueryString["preco"];
+                var metodosusuario = new List();
+                if (valorlocal != null)
+                {
+                    var todospacotes = metodosusuario.ListarPacotesById(identlocal);
+                    ViewBag.valortrab = valorlocal;
+                    return View(todospacotes);
+                }
+                else
+                {
+                    var todospacotes = metodosusuario.ListarPacotesById(identlocal);
+                    return View(todospacotes);
+                }
+            }
         }
         [HttpPost]
-        public ActionResult Index2(string teste, Seguros seguros)
-        {
+        public ActionResult Index2(string id, string trab ,Seguros seguros)
+        { 
             var metodousuario = new List();
-            var todosseguros = metodousuario.ListarSeguros(seguros);
-
-            return View(teste, todosseguros);
+            if (trab == null) { 
+                var todosseguros = metodousuario.ListarSeguros(seguros);
+                ViewBag.idpacote = id;
+                return View(todosseguros);
+            }else{
+                var todosseguros = metodousuario.ListarSeguros(seguros);
+                ViewBag.idpacote = id;
+                ViewBag.vlrtrab = trab;
+                return View(todosseguros);
+            }
         }
-
-        public ActionResult Index3()
+        [HttpPost]
+        public ActionResult Index3(string id, string idseg, string vlr)
         {
+            ViewBag.idpac = id;
+            ViewBag.idseg = idseg;
+             ViewBag.vlrtrab = vlr;
+
             return View();
         }
         [HttpPost]
         public ActionResult Gerar(int id,int idseg,string dt)
         {
-            var metodosusuario = new Cadastrar();
-             return View();
+            return View();
         }
-
+        [HttpPost]
+        public ActionResult Teste(string dt, string idpacote, int idseguro, string vlrtrab)
+        {
+            ViewBag.data = dt;
+            if (vlrtrab == null)
+            {
+                var metodosusuario = new Cadastrar();
+                var lista = new List();
+                var testa = false;
+                metodosusuario.InserirAgendas(idpacote, dt,testa);
+                var valorpac = lista.ListarPacotesById(idpacote);
+                var valorseg = lista.ListarVlrSeguroById(idseguro);
+                var valores = valorpac[0].Valor;
+                var valoresseg = valorseg[0].Valorseg;
+                decimal total = valores + valoresseg;
+                ViewBag.total = total;
+                return View();
+            }
+            else
+            {
+                var metodosusuario = new Cadastrar();
+                var lista = new List();
+                var testa = true;
+                int convert = Convert.ToInt32(vlrtrab);
+                metodosusuario.InserirAgendas(idpacote, dt, testa);
+                var valorseg = lista.ListarVlrSeguroById(idseguro);
+                var valoresseg = valorseg[0].Valorseg;
+                decimal total = convert + valoresseg;
+                ViewBag.total = total;
+                return View();
+            }
+        }
         public ActionResult Valor()
         {
             return View();
