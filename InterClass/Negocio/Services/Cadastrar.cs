@@ -43,10 +43,10 @@ namespace Negocio.Services
             cmd.Parameters.Add("@DataValid",MySqlDbType.VarChar).Value = produto.DataValid;
 
         }
-        public void InserirAgendas(Agenda agenda)
+        public void InserirAgendas(string id, string dt)
         {
-            MySqlCommand cmd = new MySqlCommand("Insert into tb_agenda(data_age,hora) values ('@dt', '');", con.MyConectarBD());
-            cmd.Parameters.Add("@dt", MySqlDbType.VarChar).Value = agenda.data;
+            MySqlCommand cmd = new MySqlCommand("Insert into tb_agenda(data_age,hora,idpaccomprado) values ('" + dt + "',''," + id + ");", con.MyConectarBD());
+
             cmd.ExecuteNonQuery();
             con.MyDesconectarBD();
         }
